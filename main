@@ -1,0 +1,92 @@
+class tx3
+{
+    public:
+        bool game_state;
+        vector<int> board;
+        int board_x;
+        int board_y;
+        int player1_mark;
+        int player2_mark;
+        int player_turn;
+        int winning_player;
+
+    public:
+        void run();
+        void new_game();
+        void game_loop();
+        void draw_board(int x,int y);
+        void draw_player_mark(int mark,int square);
+        void clear_board();
+        void get_player_move();
+        void set_player_turn();
+        bool is_winning_move();
+        void victory();
+
+    private:
+};
+
+void run(){
+    game_state=true;
+    new_game();
+}
+
+void new_game(){
+    clear_board();
+    draw_board(board_x,board_y);
+    game_loop();
+}
+
+void game_loop(){
+    //determine player turn
+    //get player chosen square
+    get_player _move();
+    //check if is valid move
+    is_valid_move();
+    //place player mark
+    draw_player_mark();
+    //check for 3 in a row
+    is_winning_move();
+    //set next player turn;
+    set_player_turn();
+}
+
+void clear_board()
+    for(x=board.begin();x<=board.end();x++){
+
+    }
+}
+
+void draw_board(int x,int y){
+    //draw board x by y;
+}
+
+void draw_player_mark(int mark,int square){
+    //check content of square
+    //place X or O at player chosen square
+    //set player turn
+}
+
+void get_player_move(int player,int square){
+    //get square
+    //set player mark
+    draw_player_mark();
+    //set next turn
+}
+
+bool is_winning_move(){
+    //check if adjacent squares form 3 in row
+    if(/**three in a row**/){
+        return true;
+    }
+    else{
+        return false;
+    }
+}
+
+bool is_valid_move(){
+
+}
+
+int main(){
+    return 0;
+}
