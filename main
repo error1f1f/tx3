@@ -1,10 +1,13 @@
+#include <vector>
+#include <stdlib.h>
+
 class tx3
 {
     public:
         bool game_state;
-        vector<int> board;
         int board_x;
         int board_y;
+        std::vector<int> board;
         int player1_mark;
         int player2_mark;
         int player_turn;
@@ -20,60 +23,57 @@ class tx3
         void get_player_move();
         void set_player_turn();
         bool is_winning_move();
+        bool is_valid_move();
         void victory();
 
     private:
 };
 
-void run(){
+void tx3::run(){
     game_state=true;
     new_game();
 }
 
-void new_game(){
+void tx3::new_game(){
     clear_board();
     draw_board(board_x,board_y);
     game_loop();
 }
 
-void game_loop(){
+void tx3::game_loop(){
     //determine player turn
     //get player chosen square
-    get_player _move();
+    get_player_move();
     //check if is valid move
     is_valid_move();
     //place player mark
-    draw_player_mark();
+    draw_player_mark(0,0);
     //check for 3 in a row
     is_winning_move();
     //set next player turn;
     set_player_turn();
 }
 
-void clear_board()
-    for(x=board.begin();x<=board.end();x++){
-
-    }
+void tx3::clear_board(){
 }
 
-void draw_board(int x,int y){
+void tx3::draw_board(int x,int y){
     //draw board x by y;
 }
 
-void draw_player_mark(int mark,int square){
+void tx3::draw_player_mark(int mark,int square){
     //check content of square
     //place X or O at player chosen square
     //set player turn
 }
 
-void get_player_move(int player,int square){
+void tx3::get_player_move(int player,int square){
     //get square
     //set player mark
     draw_player_mark();
-    //set next turn
 }
 
-bool is_winning_move(){
+bool tx3::is_winning_move(){
     //check if adjacent squares form 3 in row
     if(/**three in a row**/){
         return true;
@@ -83,8 +83,8 @@ bool is_winning_move(){
     }
 }
 
-bool is_valid_move(){
-
+bool tx3::is_valid_move(){
+    return true;
 }
 
 int main(){
